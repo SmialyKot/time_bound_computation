@@ -55,14 +55,15 @@ def plot_graphs(title, save_name, data):
     s = []
     t = []
     for key, value in data.items():
-        t.append(str(round(value, 4)))
+        t.append(float(round(value, 4)))
         s.append(int(key))
     plt.plot(s, t, label='Time(s)', color='b')
     plt.legend()
     plt.grid(True)
-    plt.xlabel('Matrix size(n*n)')
+    plt.xlabel('Matrix side(n)')
     plt.title(title)
-    plt.savefig(save_name, dpi=250)
+    plt.ylabel('Execution time in seconds')
+    plt.savefig(save_name, dpi=200)
     plt.close()
 
 
