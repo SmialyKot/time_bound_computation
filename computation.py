@@ -33,21 +33,21 @@ def solver(type_):
     results = {}
     n = 10
     if type_ == 'std':
-        while n <= 1250:
+        while n <= 1000:
             matrix = matrix_gen(n)
             t = time.process_time()
             matrix_multiplication(matrix)
             elapsed_time = time.process_time() - t
             results[n] = elapsed_time
-            n *= 5
+            n += 20
     else:
-        while n <= 1250:
+        while n <= 1000:
             matrix = matrix_gen(n)
             t = time.process_time()
             numpy_matrix_mul(matrix)
             elapsed_time = time.process_time() - t
             results[n] = elapsed_time
-            n *= 5
+            n += 20
     return results
 
 
